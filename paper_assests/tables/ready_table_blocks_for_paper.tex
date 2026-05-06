@@ -1,0 +1,51 @@
+% Required packages:
+% \usepackage{booktabs}
+% \usepackage{graphicx}
+% \usepackage{longtable}
+
+\begin{table*}[t]
+\centering
+\caption{Aggregate four-model results across MedQA, MedMCQA, and PubMedQA. Higher answer accuracy, parse coverage, and SPACE coverage are better. Lower false commitment is better.}
+\label{tab:aggregate}
+\resizebox{\textwidth}{!}{%
+\input{paper_assests/tables/table_main_4model_aggregate_clean.tex}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\caption{Accuracy and reliability deltas of the proposed method compared with each model's best direct or chain-of-thought baseline.}
+\label{tab:deltas}
+\resizebox{\textwidth}{!}{%
+\input{paper_assests/tables/table_deltas_vs_baseline_clean.tex}
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\caption{Per-dataset results for the proposed answer-fusion plus HypothesisMed-v3 SPACE method. Each row uses 1,000 examples.}
+\label{tab:perdataset}
+\resizebox{\textwidth}{!}{%
+\input{paper_assests/tables/table_proposed_per_dataset_clean.tex}
+}
+\end{table*}
+
+\begin{table}[t]
+\centering
+\caption{Confidence and accuracy summary by dataset for the proposed fusion outputs.}
+\label{tab:confidence_dataset}
+\resizebox{\linewidth}{!}{%
+\input{paper_assests/tables/confidence_accuracy_by_dataset.tex}
+}
+\end{table}
+
+% Optional appendix table. Use only if you want example-level confidence rows.
+% For this one, add \usepackage{longtable}.
+\begin{table*}[t]
+\centering
+\caption{Example-level confidence rows from proposed fusion outputs, truncated to the first 30 rows for readability.}
+\label{tab:confidence_rows}
+\resizebox{\textwidth}{!}{%
+\input{paper_assests/tables/confidence_rows_from_fusion_outputs_first30.tex}
+}
+\end{table*}

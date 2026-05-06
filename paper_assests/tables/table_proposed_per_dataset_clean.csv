@@ -1,0 +1,13 @@
+dataset,model,n,answer_accuracy,ci95,parse_coverage,space_coverage,space_accuracy,false_commitment,model_clean
+medmcqa,Qwen2.5-7B-Instruct,1000,0.561,"[0.530, 0.592]",1.0,1.0,0.635,0.0501,Qwen2.5-7B
+medmcqa,Phi-4-mini-instruct,1000,0.489,"[0.458, 0.520]",0.997,0.994,0.5191,0.3465,Phi-4-mini
+medmcqa,DeepSeek-R1-Distill-Qwen-32B,1000,0.34,"[0.311, 0.369]",0.819,0.26,0.9923,0.0522,DeepSeek-R1-32B
+medmcqa,biomistral_biomistral_7b,1000,0.164,"[0.141, 0.187]",0.476,0.011,0.0,0.0,BioMistral-7B
+medqa,Qwen2.5-7B-Instruct,1000,0.596,"[0.566, 0.626]",1.0,0.999,0.4324,0.1361,Qwen2.5-7B
+medqa,Phi-4-mini-instruct,1000,0.517,"[0.486, 0.548]",0.99,0.982,0.4216,0.2156,Phi-4-mini
+medqa,DeepSeek-R1-Distill-Qwen-32B,1000,0.255,"[0.228, 0.282]",0.594,0.404,0.995,0.0118,DeepSeek-R1-32B
+medqa,biomistral_biomistral_7b,1000,0.17,"[0.147, 0.193]",0.42,0.001,1.0,0.0,BioMistral-7B
+pubmedqa,Qwen2.5-7B-Instruct,1000,0.753,"[0.726, 0.780]",1.0,1.0,0.906,0.1215,Qwen2.5-7B
+pubmedqa,Phi-4-mini-instruct,1000,0.724,"[0.696, 0.752]",0.987,1.0,0.92,0.654,Phi-4-mini
+pubmedqa,DeepSeek-R1-Distill-Qwen-32B,1000,0.568,"[0.537, 0.599]",0.751,0.665,0.997,0.0,DeepSeek-R1-32B
+pubmedqa,biomistral_biomistral_7b,1000,0.058,"[0.044, 0.072]",0.103,0.0,,0.0,BioMistral-7B

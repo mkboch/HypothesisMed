@@ -1,0 +1,5 @@
+model,proposed_accuracy,baseline_name,baseline_accuracy,absolute_accuracy_gain,relative_accuracy_gain_percent,proposed_parse_coverage,baseline_parse_coverage,proposed_space_coverage,baseline_space_coverage,proposed_false_commitment,baseline_false_commitment,false_commitment_reduction,model_clean
+Qwen2.5-7B-Instruct,0.6367,Chain-of-thought,0.6003,0.0364,6.06,1.0,0.944,0.9997,0.002,0.1026,0.8478,0.7452,Qwen2.5-7B
+Phi-4-mini-instruct,0.5767,Chain-of-thought,0.4817,0.095,19.72,0.9913,0.7923,0.992,0.0,0.4054,0.9838,0.5784,Phi-4-mini
+DeepSeek-R1-Distill-Qwen-32B,0.3877,Direct,0.169,0.2187,129.41,0.7213,0.3557,0.443,0.001,0.0213,0.2986,0.2773,DeepSeek-R1-32B
+biomistral_biomistral_7b,0.1307,Chain-of-thought,0.1247,0.006,4.81,0.333,0.3203,0.004,0.0,0.0,0.8287,0.8287,BioMistral-7B

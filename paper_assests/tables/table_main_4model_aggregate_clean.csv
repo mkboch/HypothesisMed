@@ -1,0 +1,17 @@
+Model,Method,Datasets,N,answer_accuracy,parse_coverage,space_coverage,false_commitment,model_clean,method_clean
+Qwen2.5-7B-Instruct,Proposed: answer fusion + HypothesisMed-v3 SPACE,3,3000,0.6367,1.0,0.9997,0.1026,Qwen2.5-7B,Proposed
+Qwen2.5-7B-Instruct,Chain-of-thought,3,3000,0.6003,0.944,0.002,0.8478,Qwen2.5-7B,CoT
+Qwen2.5-7B-Instruct,Direct,3,3000,0.565,0.9147,0.0007,0.9255,Qwen2.5-7B,Direct
+Qwen2.5-7B-Instruct,HypothesisMed-v3,3,3000,0.5623,0.986,0.9997,0.0973,Qwen2.5-7B,HypMed-v3
+Phi-4-mini-instruct,Proposed: answer fusion + HypothesisMed-v3 SPACE,3,3000,0.5767,0.9913,0.992,0.4054,Phi-4-mini,Proposed
+Phi-4-mini-instruct,Chain-of-thought,3,3000,0.4817,0.7923,0.0,0.9838,Phi-4-mini,CoT
+Phi-4-mini-instruct,Direct,3,3000,0.302,0.5403,0.0,0.8329,Phi-4-mini,Direct
+Phi-4-mini-instruct,HypothesisMed-v3,3,3000,0.4943,0.931,0.992,0.4341,Phi-4-mini,HypMed-v3
+DeepSeek-R1-Distill-Qwen-32B,Proposed: answer fusion + HypothesisMed-v3 SPACE,3,3000,0.3877,0.7213,0.443,0.0213,DeepSeek-R1-32B,Proposed
+DeepSeek-R1-Distill-Qwen-32B,Chain-of-thought,3,3000,0.071,0.237,0.001,0.0,DeepSeek-R1-32B,CoT
+DeepSeek-R1-Distill-Qwen-32B,Direct,3,3000,0.169,0.3557,0.001,0.2986,DeepSeek-R1-32B,Direct
+DeepSeek-R1-Distill-Qwen-32B,HypothesisMed-v3,3,3000,0.3413,0.5793,0.443,0.0266,DeepSeek-R1-32B,HypMed-v3
+biomistral_biomistral_7b,Proposed: answer fusion + HypothesisMed-v3 SPACE,3,3000,0.1307,0.333,0.004,0.0,BioMistral-7B,Proposed
+biomistral_biomistral_7b,Chain-of-thought,3,3000,0.1247,0.3203,0.0,0.8287,BioMistral-7B,CoT
+biomistral_biomistral_7b,Direct,3,3000,0.008,0.0147,0.0,0.131,BioMistral-7B,Direct
+biomistral_biomistral_7b,HypothesisMed-v3,3,3000,0.0007,0.004,0.004,0.0,BioMistral-7B,HypMed-v3
