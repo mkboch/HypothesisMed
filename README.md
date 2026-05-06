@@ -194,6 +194,4 @@ The exact dataset acquisition paths and local paths may need to be adjusted for 
 
 ## License
 
-## License
-
 License information has not yet been finalized. Until a license is added, this repository is provided for transparency and reproducibility review only. Raw datasets, benchmark question text, model weights, and third-party resources are not included and remain governed by their respective licenses or terms of use.
