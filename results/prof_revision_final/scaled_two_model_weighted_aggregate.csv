@@ -1,0 +1,9 @@
+Model,Method,N,Weighted accuracy,Weighted parse cov.,Weighted SPACE cov.,Weighted SPACE acc.,Weighted false commit.
+Phi-4-mini,CoT,10183,0.4296,0.8062,0.0,0.0,0.9875
+Phi-4-mini,Direct,10183,0.287,0.5567,0.0,0.0,0.8652
+Phi-4-mini,Fusion,10183,0.5192,0.9928,0.9905,0.4768,0.3271
+Phi-4-mini,HypMed-v3,10183,0.3933,0.9074,0.9905,0.4768,0.3616
+Qwen2.5-7B,CoT,10183,0.6079,0.9967,0.0,0.0,0.9979
+Qwen2.5-7B,Direct,10183,0.575,0.9917,0.0,0.0,0.998
+Qwen2.5-7B,Fusion,10183,0.5953,1.0,1.0,0.5471,0.1146
+Qwen2.5-7B,HypMed-v3,10183,0.4839,0.9785,1.0,0.5471,0.0997

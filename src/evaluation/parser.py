@@ -21,6 +21,23 @@ def _first_json_object(text):
             pass
     return None
 
+def _extract_confidence(text):
+    hits = re.findall(r'"confidence"\s*:\s*([01](?:\.\d+)?)', text, flags=re.I)
+    if not hits:
+        hits = re.findall(r"CONFIDENCE\s*[:=]\s*([01](?:\.\d+)?)", text, flags=re.I)
+    if not hits:
+        # Some direct outputs use a bare numeric confidence on the second line,
+        # e.g., "C\n\n0.95\nExplanation..."
+        lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
+        if len(lines) >= 2 and re.fullmatch(r"[01](?:\.\d+)?", lines[1]):
+            hits = [lines[1]]
+    if hits:
+        try:
+            return max(0.0, min(1.0, float(hits[0])))
+        except Exception:
+            return 0.0
+    return 0.0
+
 def parse_output(text):
     text = normalize_text(text)
     out = {}
@@ -61,6 +78,17 @@ def parse_output(text):
         if hits:
             out["answer"] = hits[0].upper()
 
+    # first_nonempty_line_answer_patch:
+    # Some models output a bare option letter on the first line, e.g.,
+    # "C\n\n0.95\nExplanation...". Catch this before returning no answer.
+    if "answer" not in out:
+        lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
+        if lines:
+            first = lines[0].strip()
+            m = re.match(r"^([A-E])\s*[\.\):,-]?$", first, flags=re.I)
+            if m:
+                out["answer"] = m.group(1).upper()
+
     if "space_label" not in out:
         hits = re.findall(r'"space_label"\s*:\s*"(VALID|INCOMPLETE|CONTRADICTED)"', text, flags=re.I)
         if not hits:
@@ -69,16 +97,6 @@ def parse_output(text):
             out["space_label"] = hits[0].upper()
 
     if "confidence" not in out:
-        hits = re.findall(r'"confidence"\s*:\s*([01](?:\.\d+)?)', text, flags=re.I)
-        if not hits:
-            hits = re.findall(r"CONFIDENCE\s*[:=]\s*([01](?:\.\d+)?)", text, flags=re.I)
-        if hits:
-            try:
-                out["confidence"] = max(0.0, min(1.0, float(hits[0])))
-            except Exception:
-                out["confidence"] = 0.0
-
-    if "confidence" not in out:
-        out["confidence"] = 0.0
+        out["confidence"] = _extract_confidence(text)
 
     return out

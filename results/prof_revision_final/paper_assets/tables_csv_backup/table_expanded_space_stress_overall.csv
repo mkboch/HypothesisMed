@@ -1,0 +1,3 @@
+Model,N,SPACE coverage,SPACE accuracy
+Qwen2.5-7B,12000,1.0,0.3074
+Phi-4-mini,12000,0.9885,0.4168
