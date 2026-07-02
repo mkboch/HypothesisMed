@@ -1,7 +1,0 @@
-model,dataset,baseline,n_shared,proposed_correct_baseline_wrong,baseline_correct_proposed_wrong,mcnemar_exact_p
-qwen2_5_7b_instruct,medqa,cot,1000,89,57,0.010056475566925294
-qwen2_5_7b_instruct,medmcqa,cot,1000,92,47,0.00016852183862911795
-qwen2_5_7b_instruct,pubmedqa,cot,1000,56,24,0.0004515172719148107
-microsoft_phi_4_mini_instruct,medqa,cot,1000,120,24,1.4916559831780756e-16
-microsoft_phi_4_mini_instruct,medmcqa,cot,1000,142,39,5.9080892741023026e-15
-microsoft_phi_4_mini_instruct,pubmedqa,cot,1000,89,3,5.244963240504083e-23

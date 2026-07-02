@@ -1,9 +1,0 @@
-Recommended paper framing:
-
-We do not claim a universal state-of-the-art result because published medical QA papers use different splits, prompts, shots, and sometimes fine-tuning. Instead, we claim that the proposed inference-time reliability pipeline is competitive with reported Qwen2.5-7B CoT performance on standard biomedical QA datasets while adding structured SPACE-label reporting, parseability, and false-commitment analysis.
-
-Main claim:
-Across MedQA, MedMCQA, and PubMedQA, answer fusion plus HypothesisMed-v3 SPACE improves each evaluated model over its own Direct/CoT baseline and reveals that answer accuracy, instruction-following, and structured reliability reporting are separable capabilities.
-
-Caveat:
-BioMistral-7B should be treated as a structured-output stress-test model, not as a primary capability comparison, because its published standard QA performance is substantially higher than its structured-output compliance in our setting.

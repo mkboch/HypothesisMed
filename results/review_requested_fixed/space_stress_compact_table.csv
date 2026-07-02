@@ -1,3 +1,0 @@
-Model,N,Coverage,Accuracy,VALID recall,INCOMPLETE recall,CONTRADICTED recall
-Qwen2.5-7B,540,0.9963,0.5185,0.7167,0.4111,0.4278
-Phi-4-mini,540,0.5907,0.1833,0.4944,0.0389,0.0167
