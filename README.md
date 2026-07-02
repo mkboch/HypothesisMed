@@ -177,17 +177,3 @@ Before running experiments, check that this file matches your local model names,
 
 This is a code-first reproducibility release. It provides scripts and evaluation utilities while excluding large generated artifacts and restricted dataset or model content. This keeps the repository lightweight and avoids redistributing benchmark text or model weights.
 
-## Citation
-
-A formal citation will be added after the manuscript is finalized. For now, please cite the manuscript title:
-
-    @misc{hypothesismed,
-      title  = {HypothesisMed: Inference-Time Answer Fusion and Structured Hypothesis-Space Reporting for Biomedical Question Answering},
-      author = {Md Motaleb Hossen Manik and Ge Wang},
-      year   = {2026},
-      note   = {Manuscript under preparation}
-    }
-
-## License
-
-A license has not yet been finalized. Until a license is added, this repository is provided for transparency and reproducibility review only. Raw datasets, model weights, benchmark question text, and third-party resources remain governed by their respective licenses or terms of use.
