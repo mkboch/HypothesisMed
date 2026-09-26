@@ -1,0 +1,19 @@
+{
+  "direct_prompt_sha256": "4c55da300b12678fce4edd7350a3d4c4aa1a6ad974090f2d6f341f911ab246c4",
+  "cot_prompt_sha256": "cd1ab2c4e0d4aff7dab21f64a7c4b237b641300bfef0df52ac203577ccae4956",
+  "structured_prompt_sha256": "0f49a734980a15198f163c001ab903fb7d425f353b3ed0fa6c5d08f0018f8068",
+  "parser_sha256": "cbaa75e20ff467ed81a3272e79de4ee7e97e3e9e94379ee40ac3d0332c959223",
+  "standard_membership_sha256": "f335afed6617605d82546c29b51f849339531a2698200d696663145bfe37c8dd",
+  "full_generation_inputs_sha256": "3c75fb55c350f679467b4e2698d1bfb67a22deeb5e49a7b3f4e7caade0a65ebc",
+  "primary_protocol_files": {
+    "final_generation_settings.json": "b2277e2dc8fb251178e501befa2457f29fd9ef605ef66c7e7d3e5b7ba52a3462",
+    "final_model_runtime_manifest.json": "4cf1792cc97faa100e22667d3d22035edb11fa8f3644d2670aab1da5c4eb09db",
+    "final_serving_conditions.json": "92acd2ecdbc77fb8ff8ecd7187a0f3194b2a59e8277e6afc336ed78905b232e0",
+    "final_protocol_manifest.json": "d75aa2ee3f845befcd11fd86a2d9b4749f6af15950df201b5817a9e2dd36a9ba"
+  },
+  "sc3_protocol_files": {
+    "sc3_generation_settings.json": "75528c01d7665048f2726eda3c2e8bea00b36f36716aa4cb35bcd81bb9a0819d",
+    "sc3_protocol_manifest.json": "085c7fb98a9d6c5961c50c41b46a1c400a40578f9a2dd76480598ddc24a11e30",
+    "sc3_serving_conditions.json": "63f8d50ac58efe44f3db7397129b74846a9da1e846e3b6b88986041fc1877b39"
+  }
+}

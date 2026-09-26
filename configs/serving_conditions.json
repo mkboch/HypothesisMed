@@ -1,0 +1,311 @@
+{
+  "primary_benchmark": {
+    "final_serving_conditions": [
+      "native_chat"
+    ],
+    "conditions_per_model": [
+      {
+        "model_key": "qwen36",
+        "model_id": "Qwen/Qwen3.6-35B-A3B",
+        "condition": "native_chat",
+        "tokenizer_template": "tokenizer.apply_chat_template(add_generation_prompt=True)",
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "reasoning_policy": "explicit_non_reasoning_control",
+        "reasoning_control": "apply_chat_template(enable_thinking=False)",
+        "bare_causal_continuation_used": false
+      },
+      {
+        "model_key": "gemma4_31b",
+        "model_id": "google/gemma-4-31b-it",
+        "condition": "native_chat",
+        "tokenizer_template": "tokenizer.apply_chat_template(add_generation_prompt=True)",
+        "chat_template_kwargs": {},
+        "reasoning_policy": "native_output_observed",
+        "reasoning_control": "native chat template; no explicit non-thinking control used in frozen smoke",
+        "bare_causal_continuation_used": false
+      },
+      {
+        "model_key": "medgemma27b",
+        "model_id": "google/medgemma-27b-it",
+        "condition": "native_chat",
+        "tokenizer_template": "tokenizer.apply_chat_template(add_generation_prompt=True)",
+        "chat_template_kwargs": {},
+        "reasoning_policy": "native_reasoning_retained",
+        "reasoning_control": "native model instruction serialization; no suppression or stripping; <unused94>thought retained verbatim",
+        "bare_causal_continuation_used": false
+      },
+      {
+        "model_key": "qwen25",
+        "model_id": "Qwen/Qwen2.5-7B-Instruct",
+        "condition": "native_chat",
+        "tokenizer_template": "tokenizer.apply_chat_template(add_generation_prompt=True)",
+        "chat_template_kwargs": {},
+        "reasoning_policy": "no_explicit_reasoning_mode",
+        "reasoning_control": "native Qwen2.5 chat template; no thinking mode",
+        "bare_causal_continuation_used": false
+      },
+      {
+        "model_key": "phi4mini",
+        "model_id": "microsoft/Phi-4-mini-instruct",
+        "condition": "native_chat",
+        "tokenizer_template": "tokenizer.apply_chat_template(add_generation_prompt=True)",
+        "chat_template_kwargs": {},
+        "reasoning_policy": "no_explicit_reasoning_mode",
+        "reasoning_control": "native Phi-4-mini instruction template; built-in Transformers Phi3ForCausalLM",
+        "bare_causal_continuation_used": false
+      }
+    ],
+    "malformed_bare_causal_continuation_excluded": true,
+    "rationale": "Current instruction-tuned serialization diagnostics showed bare/user-open continuation can run away, emit empty outputs, or leak reasoning markers; native chat is model-supported and smoke-passed.",
+    "FULL_PANEL_PRIMARY_CONDITION": "native_chat",
+    "FULL_PANEL_IS_TWO_INTERFACE_COMPARISON": "NO",
+    "SERVING_SENSITIVITY_EVIDENCE_SOURCE": "bounded_serialization_diagnostics",
+    "MALFORMED_BARE_CONTINUATION_EXCLUDED_FROM_PRIMARY_BENCHMARK": "YES",
+    "OUTCOME_ANALYSIS_USED_FOR_THIS_DECISION": "NO",
+    "interpretation": "The frozen five-model full benchmark uses each model's valid native instruction/chat serialization and is not a five-model comparison across multiple serving interfaces. Serving/interface sensitivity claims belong to the separately frozen serialization-boundary and forensic experiments."
+  },
+  "sc3": {
+    "condition": "native_chat",
+    "models": [
+      {
+        "backend": "transformers",
+        "cached_generation_config_sha256": "e70c136c1b78ddc1fb0905bac8e733a4dc448d4f852a5dd75143fffc70be550e",
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "condition": "native_chat",
+        "existing_primary_cot_decoding": {
+          "do_sample": true,
+          "min_p": 0.0,
+          "presence_penalty": 1.5,
+          "repetition_penalty": 1.0,
+          "temperature": 0.7,
+          "top_k": 20,
+          "top_p": 0.8
+        },
+        "existing_primary_cot_seed": 20260816,
+        "existing_primary_cot_was_stochastic": true,
+        "max_model_len": 8192,
+        "max_tokens": 4096,
+        "model_class": "AutoModelForImageTextToText",
+        "model_id": "Qwen/Qwen3.6-35B-A3B",
+        "model_key": "qwen36",
+        "model_trust_remote_code": false,
+        "python_version": "3.12.3",
+        "reasoning_control": "apply_chat_template(enable_thinking=False)",
+        "reasoning_policy": "explicit_non_reasoning_control",
+        "reuse_decision": "not reused; SC-3 uses three prospective independent seeds only",
+        "reuse_primary_cot_as_sample": false,
+        "revision": "995ad96eacd98c81ed38be0c5b274b04031597b0",
+        "sc_decoding": {
+          "do_sample": true,
+          "min_p": 0.0,
+          "presence_penalty": 1.5,
+          "repetition_penalty": 1.0,
+          "temperature": 0.7,
+          "top_k": 20,
+          "top_p": 0.8
+        },
+        "sc_decoding_source": "existing frozen native-chat CoT decoding was stochastic; reproduced with independent SC seeds",
+        "sc_seeds": [
+          20260831,
+          20260832,
+          20260833
+        ],
+        "tokenizer_template": "tokenizer.apply_chat_template(add_generation_prompt=True)",
+        "tokenizer_trust_remote_code": true,
+        "transformers_version": "5.15.0"
+      },
+      {
+        "backend": "transformers",
+        "cached_generation_config_sha256": "d4226bbe3117d2d253ba4609720ba82c6c4ce4627a9a6ae05387c78983ac03de",
+        "chat_template_kwargs": {},
+        "condition": "native_chat",
+        "existing_primary_cot_decoding": {
+          "do_sample": true,
+          "min_p": null,
+          "presence_penalty": 0.0,
+          "repetition_penalty": 1.0,
+          "temperature": 0.1,
+          "top_k": null,
+          "top_p": 1.0
+        },
+        "existing_primary_cot_seed": 20260816,
+        "existing_primary_cot_was_stochastic": true,
+        "max_model_len": 8192,
+        "max_tokens": 4096,
+        "model_class": "AutoModelForImageTextToText",
+        "model_id": "google/gemma-4-31b-it",
+        "model_key": "gemma4_31b",
+        "model_trust_remote_code": false,
+        "python_version": "3.12.3",
+        "reasoning_control": "native chat template; no explicit non-thinking control used in frozen smoke",
+        "reasoning_policy": "native_output_observed",
+        "reuse_decision": "not reused; SC-3 uses three prospective independent seeds only",
+        "reuse_primary_cot_as_sample": false,
+        "revision": "145dc2508c480a64b47242f160d286cff94a2343",
+        "sc_decoding": {
+          "do_sample": true,
+          "min_p": null,
+          "presence_penalty": 0.0,
+          "repetition_penalty": 1.0,
+          "temperature": 0.1,
+          "top_k": null,
+          "top_p": 1.0
+        },
+        "sc_decoding_source": "existing frozen native-chat CoT decoding was stochastic; reproduced with independent SC seeds",
+        "sc_seeds": [
+          20260831,
+          20260832,
+          20260833
+        ],
+        "tokenizer_template": "tokenizer.apply_chat_template(add_generation_prompt=True)",
+        "tokenizer_trust_remote_code": false,
+        "transformers_version": "5.15.0"
+      },
+      {
+        "backend": "transformers",
+        "cached_generation_config_sha256": "3fd266fac5b39a46ddeb721536ed699ef10d8fac86301af7bc3eaef31f46c195",
+        "chat_template_kwargs": {},
+        "condition": "native_chat",
+        "existing_primary_cot_decoding": {
+          "do_sample": false,
+          "min_p": null,
+          "presence_penalty": 0.0,
+          "repetition_penalty": 1.0,
+          "temperature": null,
+          "top_k": null,
+          "top_p": null
+        },
+        "existing_primary_cot_seed": 20260816,
+        "existing_primary_cot_was_stochastic": false,
+        "max_model_len": 8192,
+        "max_tokens": 4096,
+        "model_class": "AutoModelForImageTextToText",
+        "model_id": "google/medgemma-27b-it",
+        "model_key": "medgemma27b",
+        "model_trust_remote_code": false,
+        "python_version": "3.12.3",
+        "reasoning_control": "native model instruction serialization; no suppression or stripping; <unused94>thought retained verbatim",
+        "reasoning_policy": "native_reasoning_retained",
+        "reuse_decision": "not reusable because primary CoT was deterministic/effectively seed-invariant",
+        "reuse_primary_cot_as_sample": false,
+        "revision": "2d3e00ea38b50018bf5dd3aa1009457cd2d5a48f",
+        "sc_decoding": {
+          "do_sample": true,
+          "min_p": null,
+          "presence_penalty": 0.0,
+          "repetition_penalty": 1.0,
+          "temperature": 0.7,
+          "top_k": 50,
+          "top_p": 0.95
+        },
+        "sc_decoding_source": "primary CoT decoding was deterministic; SC-only stochastic profile uses standard Transformers sampling controls because the cached model generation_config does not declare stochastic defaults",
+        "sc_seeds": [
+          20260831,
+          20260832,
+          20260833
+        ],
+        "tokenizer_template": "tokenizer.apply_chat_template(add_generation_prompt=True)",
+        "tokenizer_trust_remote_code": false,
+        "transformers_version": "5.15.0"
+      },
+      {
+        "backend": "transformers",
+        "cached_generation_config_sha256": "3a8f9087e486054c8a4a08dae2e5a3ba62e23da212b5b8c08bc42cb983c3459f",
+        "chat_template_kwargs": {},
+        "condition": "native_chat",
+        "existing_primary_cot_decoding": {
+          "do_sample": false,
+          "min_p": null,
+          "presence_penalty": 0.0,
+          "repetition_penalty": 1.0,
+          "temperature": null,
+          "top_k": null,
+          "top_p": null
+        },
+        "existing_primary_cot_seed": 20260816,
+        "existing_primary_cot_was_stochastic": false,
+        "max_model_len": 8192,
+        "max_tokens": 4096,
+        "model_class": "AutoModelForCausalLM",
+        "model_id": "Qwen/Qwen2.5-7B-Instruct",
+        "model_key": "qwen25",
+        "model_trust_remote_code": false,
+        "python_version": "3.12.3",
+        "reasoning_control": "native Qwen2.5 chat template; no thinking mode",
+        "reasoning_policy": "no_explicit_reasoning_mode",
+        "reuse_decision": "not reusable because primary CoT was deterministic/effectively seed-invariant",
+        "reuse_primary_cot_as_sample": false,
+        "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "sc_decoding": {
+          "do_sample": true,
+          "min_p": null,
+          "presence_penalty": 0.0,
+          "repetition_penalty": 1.05,
+          "temperature": 0.7,
+          "top_k": 20,
+          "top_p": 0.8
+        },
+        "sc_decoding_source": "primary CoT decoding was deterministic; SC-only stochastic profile follows cached Qwen2.5 generation_config sampling fields",
+        "sc_seeds": [
+          20260831,
+          20260832,
+          20260833
+        ],
+        "tokenizer_template": "tokenizer.apply_chat_template(add_generation_prompt=True)",
+        "tokenizer_trust_remote_code": true,
+        "transformers_version": "5.15.0"
+      },
+      {
+        "backend": "transformers",
+        "cached_generation_config_sha256": "3e3f48753753f92d2b958679151861d4fd7bf26e4dfc41fd47056116c4914dcd",
+        "chat_template_kwargs": {},
+        "condition": "native_chat",
+        "existing_primary_cot_decoding": {
+          "do_sample": false,
+          "min_p": null,
+          "presence_penalty": 0.0,
+          "repetition_penalty": 1.0,
+          "temperature": null,
+          "top_k": null,
+          "top_p": null
+        },
+        "existing_primary_cot_seed": 20260816,
+        "existing_primary_cot_was_stochastic": false,
+        "max_model_len": 8192,
+        "max_tokens": 4096,
+        "model_class": "AutoModelForCausalLM",
+        "model_id": "microsoft/Phi-4-mini-instruct",
+        "model_key": "phi4mini",
+        "model_trust_remote_code": false,
+        "python_version": "3.12.3",
+        "reasoning_control": "native Phi-4-mini instruction template; built-in Transformers Phi3ForCausalLM",
+        "reasoning_policy": "no_explicit_reasoning_mode",
+        "reuse_decision": "not reusable because primary CoT was deterministic/effectively seed-invariant",
+        "reuse_primary_cot_as_sample": false,
+        "revision": "cfbefacb99257ffa30c83adab238a50856ac3083",
+        "sc_decoding": {
+          "do_sample": true,
+          "min_p": null,
+          "presence_penalty": 0.0,
+          "repetition_penalty": 1.0,
+          "temperature": 0.7,
+          "top_k": 50,
+          "top_p": 0.95
+        },
+        "sc_decoding_source": "primary CoT decoding was deterministic; SC-only stochastic profile uses standard Transformers sampling controls because the cached model generation_config does not declare stochastic defaults",
+        "sc_seeds": [
+          20260831,
+          20260832,
+          20260833
+        ],
+        "tokenizer_template": "tokenizer.apply_chat_template(add_generation_prompt=True)",
+        "tokenizer_trust_remote_code": true,
+        "transformers_version": "5.15.0"
+      }
+    ]
+  }
+}

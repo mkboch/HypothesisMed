@@ -1,0 +1,184 @@
+{
+  "description": "Sanitized public copy of frozen primary benchmark generation settings. Private absolute cache/runtime paths and generated inputs are omitted.",
+  "dataset_counts": {
+    "medqa": 1273,
+    "medmcqa": 4183,
+    "pubmedqa": 500
+  },
+  "total_items_per_model": 5956,
+  "methods": [
+    "direct",
+    "cot",
+    "structured"
+  ],
+  "fusion_is_derived_after_generation": true,
+  "models": [
+    {
+      "model_key": "qwen36",
+      "model_id": "Qwen/Qwen3.6-35B-A3B",
+      "revision": "995ad96eacd98c81ed38be0c5b274b04031597b0",
+      "backend": "transformers",
+      "model_class": "AutoModelForImageTextToText",
+      "model_trust_remote_code": false,
+      "tokenizer_trust_remote_code": true,
+      "serialization_condition": "native_chat",
+      "tokenizer_template": "tokenizer.apply_chat_template(add_generation_prompt=True)",
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      },
+      "reasoning_policy": "explicit_non_reasoning_control",
+      "reasoning_control": "apply_chat_template(enable_thinking=False)",
+      "bare_causal_continuation_used": false,
+      "seed": 20260816,
+      "samples_per_prompt_method": 1,
+      "prompt_methods": [
+        "direct",
+        "cot",
+        "structured"
+      ],
+      "max_model_len": 8192,
+      "max_output_tokens": 4096,
+      "decoding": {
+        "do_sample": true,
+        "temperature": 0.7,
+        "top_p": 0.8,
+        "top_k": 20,
+        "min_p": 0.0,
+        "presence_penalty": 1.5,
+        "repetition_penalty": 1.0
+      }
+    },
+    {
+      "model_key": "gemma4_31b",
+      "model_id": "google/gemma-4-31b-it",
+      "revision": "145dc2508c480a64b47242f160d286cff94a2343",
+      "backend": "transformers",
+      "model_class": "AutoModelForImageTextToText",
+      "model_trust_remote_code": false,
+      "tokenizer_trust_remote_code": false,
+      "serialization_condition": "native_chat",
+      "tokenizer_template": "tokenizer.apply_chat_template(add_generation_prompt=True)",
+      "chat_template_kwargs": {},
+      "reasoning_policy": "native_output_observed",
+      "reasoning_control": "native chat template; no explicit non-thinking control used in frozen smoke",
+      "bare_causal_continuation_used": false,
+      "seed": 20260816,
+      "samples_per_prompt_method": 1,
+      "prompt_methods": [
+        "direct",
+        "cot",
+        "structured"
+      ],
+      "max_model_len": 8192,
+      "max_output_tokens": 4096,
+      "decoding": {
+        "do_sample": true,
+        "temperature": 0.1,
+        "top_p": 1.0,
+        "top_k": null,
+        "min_p": null,
+        "presence_penalty": 0.0,
+        "repetition_penalty": 1.0
+      }
+    },
+    {
+      "model_key": "medgemma27b",
+      "model_id": "google/medgemma-27b-it",
+      "revision": "2d3e00ea38b50018bf5dd3aa1009457cd2d5a48f",
+      "backend": "transformers",
+      "model_class": "AutoModelForImageTextToText",
+      "model_trust_remote_code": false,
+      "tokenizer_trust_remote_code": false,
+      "serialization_condition": "native_chat",
+      "tokenizer_template": "tokenizer.apply_chat_template(add_generation_prompt=True)",
+      "chat_template_kwargs": {},
+      "reasoning_policy": "native_reasoning_retained",
+      "reasoning_control": "native model instruction serialization; no suppression or stripping; <unused94>thought retained verbatim",
+      "bare_causal_continuation_used": false,
+      "seed": 20260816,
+      "samples_per_prompt_method": 1,
+      "prompt_methods": [
+        "direct",
+        "cot",
+        "structured"
+      ],
+      "max_model_len": 8192,
+      "max_output_tokens": 4096,
+      "decoding": {
+        "do_sample": false,
+        "temperature": null,
+        "top_p": null,
+        "top_k": null,
+        "min_p": null,
+        "presence_penalty": 0.0,
+        "repetition_penalty": 1.0
+      }
+    },
+    {
+      "model_key": "qwen25",
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+      "backend": "transformers",
+      "model_class": "AutoModelForCausalLM",
+      "model_trust_remote_code": false,
+      "tokenizer_trust_remote_code": true,
+      "serialization_condition": "native_chat",
+      "tokenizer_template": "tokenizer.apply_chat_template(add_generation_prompt=True)",
+      "chat_template_kwargs": {},
+      "reasoning_policy": "no_explicit_reasoning_mode",
+      "reasoning_control": "native Qwen2.5 chat template; no thinking mode",
+      "bare_causal_continuation_used": false,
+      "seed": 20260816,
+      "samples_per_prompt_method": 1,
+      "prompt_methods": [
+        "direct",
+        "cot",
+        "structured"
+      ],
+      "max_model_len": 8192,
+      "max_output_tokens": 4096,
+      "decoding": {
+        "do_sample": false,
+        "temperature": null,
+        "top_p": null,
+        "top_k": null,
+        "min_p": null,
+        "presence_penalty": 0.0,
+        "repetition_penalty": 1.0
+      }
+    },
+    {
+      "model_key": "phi4mini",
+      "model_id": "microsoft/Phi-4-mini-instruct",
+      "revision": "cfbefacb99257ffa30c83adab238a50856ac3083",
+      "backend": "transformers",
+      "model_class": "AutoModelForCausalLM",
+      "model_trust_remote_code": false,
+      "tokenizer_trust_remote_code": true,
+      "serialization_condition": "native_chat",
+      "tokenizer_template": "tokenizer.apply_chat_template(add_generation_prompt=True)",
+      "chat_template_kwargs": {},
+      "reasoning_policy": "no_explicit_reasoning_mode",
+      "reasoning_control": "native Phi-4-mini instruction template; built-in Transformers Phi3ForCausalLM",
+      "bare_causal_continuation_used": false,
+      "seed": 20260816,
+      "samples_per_prompt_method": 1,
+      "prompt_methods": [
+        "direct",
+        "cot",
+        "structured"
+      ],
+      "max_model_len": 8192,
+      "max_output_tokens": 4096,
+      "decoding": {
+        "do_sample": false,
+        "temperature": null,
+        "top_p": null,
+        "top_k": null,
+        "min_p": null,
+        "presence_penalty": 0.0,
+        "repetition_penalty": 1.0
+      }
+    }
+  ]
+}

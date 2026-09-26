@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: "Not All Inference-Time Aggregation Is Equal: Heterogeneous Prompt Fusion versus Self-Consistency in Biomedical Question Answering"
+authors:
+  - family-names: Manik
+    given-names: Md Motaleb Hossen
+  - family-names: Wang
+    given-names: Ge
+repository-code: "https://github.com/mkboch/HypothesisMed"
+url: "https://github.com/mkboch/HypothesisMed"
+type: software
+license: MIT
+message: "If you use this repository, please cite the associated HypothesisMed paper and this reproducibility repository."

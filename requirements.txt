@@ -1,0 +1,14 @@
+torch
+transformers
+accelerate
+datasets
+vllm
+pandas
+numpy
+scikit-learn
+jsonlines
+pydantic
+tqdm
+PyYAML
+matplotlib
+scipy
